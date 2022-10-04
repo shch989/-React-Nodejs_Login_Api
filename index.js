@@ -28,7 +28,7 @@ app.post('/register', (req, res) => {
 
   // bodyParser 필수
   const user = new User(req.body)
-  user.save((err, doc) => {
+  user.save((err, userInfo) => {
     if(err) return res.json({ success: false, message: err})
     return res.status(200).json({ success: true })
   })
